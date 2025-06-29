@@ -1,0 +1,55 @@
+.SpanBar {
+  > span {
+    transition: 0.3s;
+    &:hover {
+      background-color: rgba(151, 151, 151, 0.685);
+    }
+  }
+}
+.NavUl {
+  > li {
+    transition: 0.4s;  
+    &:hover {
+        >.NavUl2{
+            background-color: var(--HoverColor);
+        }
+        color:var(--HoverColor);
+        
+      > span:nth-of-type(1) > svg {
+        fill:var(--HoverColor);
+      }
+    }
+    > span {
+      &:nth-of-type(1) {
+        width: 20%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        cursor: pointer;
+        > svg {
+          fill: #b1b1b1;
+          transition: 0.4s;
+
+        }
+        
+      }
+      &:nth-of-type(2) {
+        width: 60%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.NavUl2{
+        transition: 0.3s;
+        background-color: rgba(0, 0, 255, 0);
+    
+}
+
+
+
+
+
