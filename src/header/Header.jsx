@@ -20,7 +20,7 @@ function Header() {
           </div>
           <div className=" w-full h-[80%] flex">
             
-            <ul className="w-[90%] ] gap-9 flex flex-col text-[var(--NavColor)] NavUl pt-5" >
+            <ul className="w-[90%] ] gap-9 flex flex-col text-[var(--NavColor)] NavUl pt-20" >
               <li className="flex justify-start items-center">
                 <div className="NavUl2 w-[2%] h-10 rounded-tr-2xl rounded-br-2xl mr-8"></div>
                 <span>

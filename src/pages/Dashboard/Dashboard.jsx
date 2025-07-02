@@ -2,6 +2,7 @@ import React from "react";
 import CardImg from "../../../public/Card.png";
 import CardBlack from "../../../public/CardBlack.png";
 
+import { Calendar } from "../../../components/ui/calendar";
 
 import {
   Area,
@@ -57,10 +58,9 @@ const chartConfig = {
 };
 
 function Dashboard(props) {
-
   return (
     <section className=" w-[100%] h-full bg-[var(--BgColor)] ">
-      <div className="flex p-10 pt-6 w-full h-full   gap-25 justify-center items-center">
+      <div className="flex p-10 pt-6 w-full h-auto gap-25 justify-center items-center">
         <div className=" flex justify-center items-start flex-col gap-2">
           <h2 className="font-bold text-2xl">My Cards</h2>
           <div className=" flex justify-d gap-2 items-center flex-col w-100 h-60  rounded-2xl bg-[var(--CardColor)] ">
@@ -132,7 +132,7 @@ function Dashboard(props) {
           </div>
         </div>
 
-        <div className=" flex justify-center items-end flex-col gap-2">
+        <div className=" flex justify-center items-end flex-col gap-2 ">
           <h2 className="">See All</h2>
           <div className=" flex justify-start gap-2 items-center flex-col w-100 h-60  rounded-2xl border-2  border-[var(--NavColor)] bg-white ">
             <div className="flex justify-start items-center w-[90%] pt-2  h-[30%] text-[var(--TextColor)]">
@@ -252,17 +252,18 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="flex p-10 pt-6 w-full h-auto justify-start items-center gap-50 ">
-        <div className="flex flex-col justify-center items-start gap-2">
+      <div className="flex p-10 pt-6 w-full h-auto justify-center items-center">
+        <div className="flex flex-col justify-center items-center gap-2 w-[50%]">
           <h2 className="font-bold text-2xl">Weekly Activity</h2>
-          <div>
+          <div className="flex justify-center items-center w-full h-[300px]">
             <ChartContainer
               config={chartConfig}
-              className="min-h-[330px] w-full bg-white rounded-2xl"
+              className="h-full w-full bg-white rounded-2xl"
             >
-              <BarChart accessibilityLayer data={chartData}>
+              <BarChart accessibilityLayer data={chartData} >
                 <CartesianGrid vertical={false} />
                 <XAxis
+                
                   dataKey="month"
                   tickLine={false}
                   tickMargin={10}
@@ -271,13 +272,13 @@ function Dashboard(props) {
                 />
                 <ChartTooltip content={<ChartTooltipContent />} />
 
-                <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+                <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4}  />
                 <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
               </BarChart>
             </ChartContainer>
           </div>
         </div>
-        <div className="flex flex-col justify-start items-start gap-2 w-full h-auto">
+        <div className="flex flex-col justify-start items-center gap-2 w-[42%] h-auto ">
           <h2 className="font-bold text-2xl">Weekly Activity</h2>
           <div>
             <span>
@@ -326,14 +327,16 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="flex p-10  w-full h-auto ">
-        <div className=" flex-col w-[50%] h-full flex gap-3">
-          <h3 className="text-2xl font-bold">Quick Transfer</h3>
-          <div className=" flex justify-start  items-center flex-col w-[60%] h-60  rounded-2xl  border-[var(--NavColor)] bg-white">
+      <div className="flex p-10  w-full h-auto justify-center items-center">
+        <div className=" flex-col w-[50%] h-full flex gap-3 justify-center items-start pl-15">
+          <div className="flex justify-start items-center w-full">
+            <h3 className="text-2xl font-bold ">Quick Transfer</h3>
+          </div>
+          <div className=" flex  flex-col w-[80%] h-[300px]  rounded-2xl  border-[var(--NavColor)] bg-white">
             <Card className="w-full h-full flex">
               <CardAction
                 className={
-                  "flex justify-center items-center w-full h-auto  gap-5 text-[20px] "
+                  "flex justify-center items-center w-full h-auto  gap-10 text-[20px] "
                 }
               >
                 <div className="flex justify-center items-center gap-3 p-2 flex-col">
@@ -370,13 +373,13 @@ function Dashboard(props) {
                   </CardTitle>
                 </div>
               </CardAction>
-              <div className="p-5 flex justify-center items-center gap-5">
+              <div className="p-5 flex justify-center items-center gap-5 pt-8">
                 <CardDescription>Write Amount</CardDescription>
                 <div className="w-[60%] h-[2.3rem] rounded-3xl border-2 flex bg-[var(--BgColor)]">
                   <div className="w-[50%] h-full flex justify-center items-center text-[var(--NavColor)]">
                     <p>525.50</p>
                   </div>
-                  <button className="w-[50%] h-full flex justify-center items-center bg-[var(--CardColor)] rounded-3xl text-white gap-1">
+                  <button className="w-[50%] h-full flex justify-center items-center bg-[var(--CardColor)] rounded-3xl transition text-white gap-1 hover:bg-[var(--HoverColor)]">
                     <p>Send</p>
                     <span>
                       <svg
@@ -399,10 +402,10 @@ function Dashboard(props) {
           </div>
         </div>
 
-        <div className=" flex-col w-[50%] h-full flex gap-3">
+        <div className="flex-col w-[80%] h-full flex gap-3">
           <h3 className="text-2xl font-bold">Balance History</h3>
-          <div className="w-[80%] bg-white rounded-2xl  ">
-            <ChartContainer config={chartConfig}>
+          <div className="w-[80%] h-[300px] p-4 bg-white rounded-2xl">
+            <ChartContainer className="w-full h-full " config={chartConfig}>
               <AreaChart
                 accessibilityLayer
                 data={chartData}
@@ -448,9 +451,6 @@ function Dashboard(props) {
               </AreaChart>
             </ChartContainer>
           </div>
-        </div>
-        <div className="w-[30%] border-2 h-full">
-          
         </div>
       </div>
     </section>
