@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import "./header/Header.css";
 import DashboardLayout from "./layout/dashboardLayout";
 import LoginLayout from "./layout/loginLayout";
-
+import Transactions from "./pages/Dashboard/Transactions"
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
 
           <Route element={<DashboardLayout />}>
             <Route index path="/dashboard" element={<Dashboard />} />
+            <Route index path="/transactions" element={<Transactions />} />
           </Route>
         </Routes>
 
