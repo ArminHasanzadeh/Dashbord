@@ -8,7 +8,7 @@ function DashboardLayout(props) {
       <div className="absolute top-0 left-0 w-full">
         <Header />
       </div>
-      <div className="w-[85%] h-auto absolute top-22 right-0 ">
+      <div className="w-[85%] h-auto absolute top-22 right-0 max-sm:w-full max-lg:w-full">
         <Outlet />
       </div>
     </main>

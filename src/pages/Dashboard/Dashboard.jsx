@@ -59,8 +59,8 @@ const chartConfig = {
 
 function Dashboard(props) {
   return (
-    <section className=" w-[100%] h-full bg-[var(--BgColor)] ">
-      <div className="flex p-10 pt-6 w-full h-auto gap-25 justify-center items-center">
+    <section className=" w-[100%] h-full bg-[var(--BgColor)] pb-10 overflow-x-hidden ">
+      <div className="flex p-0 pt-6 w-full h-auto gap-25 justify-center items-center max-sm:flex-col">
         <div className=" flex justify-center items-start flex-col gap-2">
           <h2 className="font-bold text-2xl">My Cards</h2>
           <div className=" flex justify-d gap-2 items-center flex-col w-100 h-60  rounded-2xl bg-[var(--CardColor)] ">
@@ -91,7 +91,7 @@ function Dashboard(props) {
                 </div>
               </div>
             </div>
-            <div className="flex justify-start items-center w-[100%] p-3   h-[30%] text-white bg-[var(--HoverColor)] rounded-b-2xl mt-2">
+            <div className="flex justify-start items-center w-[100%] p-3   h-[30%] text-white bg-[var(--HoverColor)] rounded-b-2xl mt-2 ">
               <div className="w-[80%] flex">
                 <div className=" flex justify-center items-start  w-[70%] h-auto">
                   <div className="flex pl-6 gap-2 text-[20px]">
@@ -132,7 +132,7 @@ function Dashboard(props) {
           </div>
         </div>
 
-        <div className=" flex justify-center items-end flex-col gap-2 ">
+        <div className=" flex justify-center items-end flex-col gap-2 max-sm:hidden ">
           <h2 className="">See All</h2>
           <div className=" flex justify-start gap-2 items-center flex-col w-100 h-60  rounded-2xl border-2  border-[var(--NavColor)] bg-white ">
             <div className="flex justify-start items-center w-[90%] pt-2  h-[30%] text-[var(--TextColor)]">
@@ -202,7 +202,7 @@ function Dashboard(props) {
             </div>
           </div>
         </div>
-        <div className=" flex justify-center items-start flex-col gap-2">
+        <div className=" flex justify-center items-start flex-col gap-2 ">
           <h2 className="font-bold text-2xl">Recent Transaction</h2>
           <div className=" flex justify-start  items-center flex-col w-100 h-60  rounded-2xl border-2  border-[var(--NavColor)] bg-white">
             <Card className="w-full h-full ">
@@ -252,10 +252,10 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="flex p-10 pt-6 w-full h-auto justify-center items-center">
-        <div className="flex flex-col justify-center items-center gap-2 w-[50%]">
+      <div className="flex p-10 pt-6 w-full h-auto justify-center items-center max-sm:flex-col max-sm:gap-10">
+        <div className="flex flex-col justify-center items-center gap-2 w-[50%] max-sm:w-full">
           <h2 className="font-bold text-2xl">Weekly Activity</h2>
-          <div className="flex justify-center items-center w-full h-[300px]">
+          <div className="flex justify-center items-start w-full h-[300px]">
             <ChartContainer
               config={chartConfig}
               className="h-full w-full bg-white rounded-2xl"
@@ -278,7 +278,7 @@ function Dashboard(props) {
             </ChartContainer>
           </div>
         </div>
-        <div className="flex flex-col justify-start items-center gap-2 w-[42%] h-auto ">
+        <div className="flex flex-col justify-start items-center gap-2 w-[42%] h-auto max-sm:w-full">
           <h2 className="font-bold text-2xl">Weekly Activity</h2>
           <div>
             <span>
@@ -327,12 +327,12 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="flex p-10  w-full h-auto justify-center items-center">
-        <div className=" flex-col w-[50%] h-full flex gap-3 justify-center items-start pl-15">
+      <div className="flex p-10  w-full h-auto justify-center items-center max-sm:flex-col max-sm:gap-10">
+        <div className=" flex-col w-[50%] h-full flex gap-3 justify-center items-start pl-15 max-sm:pl-0 max-sm:w-full">
           <div className="flex justify-start items-center w-full">
             <h3 className="text-2xl font-bold ">Quick Transfer</h3>
           </div>
-          <div className=" flex  flex-col w-[80%] h-[300px]  rounded-2xl  border-[var(--NavColor)] bg-white">
+          <div className=" flex  flex-col w-[80%] h-[300px]  rounded-2xl  border-[var(--NavColor)] bg-white max-sm:w-full">
             <Card className="w-full h-full flex">
               <CardAction
                 className={
@@ -402,9 +402,9 @@ function Dashboard(props) {
           </div>
         </div>
 
-        <div className="flex-col w-[80%] h-full flex gap-3">
+        <div className="flex-col w-[80%] h-full flex gap-3 max-sm:w-full ">
           <h3 className="text-2xl font-bold">Balance History</h3>
-          <div className="w-[80%] h-[300px] p-4 bg-white rounded-2xl">
+          <div className="w-[80%] h-[300px] p-4 bg-white rounded-2xl max-sm:w-full">
             <ChartContainer className="w-full h-full " config={chartConfig}>
               <AreaChart
                 accessibilityLayer
