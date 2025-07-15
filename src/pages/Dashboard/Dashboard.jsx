@@ -60,7 +60,7 @@ const chartConfig = {
 function Dashboard(props) {
   return (
     <section className=" w-[100%] h-full bg-[var(--BgColor)] pb-10 overflow-x-hidden ">
-      <div className="flex p-0 pt-6 w-full h-auto gap-25 justify-center items-center max-sm:flex-col">
+      <div className="flex p-0 pt-6 w-full h-auto gap-25 justify-center items-center max-sm:flex-col max-xl:flex-col">
         <div className=" flex justify-center items-start flex-col gap-2">
           <h2 className="font-bold text-2xl">My Cards</h2>
           <div className=" flex justify-d gap-2 items-center flex-col w-100 h-60  rounded-2xl bg-[var(--CardColor)] ">
@@ -252,7 +252,7 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="flex p-10 pt-6 w-full h-auto justify-center items-center max-sm:flex-col max-sm:gap-10">
+      <div className="flex p-10 pt-6 w-full h-auto justify-center items-center max-sm:flex-col max-sm:gap-10 max-xl:flex-col">
         <div className="flex flex-col justify-center items-center gap-2 w-[50%] max-sm:w-full">
           <h2 className="font-bold text-2xl">Weekly Activity</h2>
           <div className="flex justify-center items-start w-full h-[300px]">
@@ -327,8 +327,8 @@ function Dashboard(props) {
           </div>
         </div>
       </div>
-      <div className="flex p-10  w-full h-auto justify-center items-center max-sm:flex-col max-sm:gap-10">
-        <div className=" flex-col w-[50%] h-full flex gap-3 justify-center items-start pl-15 max-sm:pl-0 max-sm:w-full">
+      <div className="flex p-10  w-full h-auto justify-center items-center max-sm:flex-col max-sm:gap-10 max-xl:flex-col">
+        <div className=" flex-col w-[50%] h-full flex gap-3 justify-center items-start pl-15 max-sm:pl-0 max-sm:w-full max-xl:w-full">
           <div className="flex justify-start items-center w-full">
             <h3 className="text-2xl font-bold ">Quick Transfer</h3>
           </div>
@@ -402,9 +402,9 @@ function Dashboard(props) {
           </div>
         </div>
 
-        <div className="flex-col w-[80%] h-full flex gap-3 max-sm:w-full ">
+        <div className="flex-col w-[80%] h-full flex gap-3 max-sm:w-full  ">
           <h3 className="text-2xl font-bold">Balance History</h3>
-          <div className="w-[80%] h-[300px] p-4 bg-white rounded-2xl max-sm:w-full">
+          <div className="w-[80%] h-[300px] p-4 bg-white rounded-2xl max-sm:w-full max-xl:w-full">
             <ChartContainer className="w-full h-full " config={chartConfig}>
               <AreaChart
                 accessibilityLayer

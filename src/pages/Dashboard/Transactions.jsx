@@ -122,8 +122,8 @@ function Transactions() {
   
 
   return (
-    <section className="w-full h-[100vh] bg-[var(--BgColor)] pb-10">
-      <div className="flex p-10 pt-6 w-full h-auto gap-25 justify-center items-center">
+    <section className="w-full h-[100vh] bg-[var(--BgColor)] pb-10 overflow-x-hidden ">
+      <div className="flex p-10 pt-6 w-full h-auto gap-25 justify-center items-center max-xl:flex-col">
         <div className=" flex justify-center items-start flex-col gap-2">
           <h2 className="font-bold text-2xl">My Cards</h2>
           <div className=" flex justify-d gap-2 items-center flex-col w-100 h-60  rounded-2xl bg-[var(--CardColor)] ">
@@ -266,7 +266,7 @@ function Transactions() {
           </div>
         </div>
 
-        <div className=" flex justify-center items-start flex-col gap-2 ">
+        <div className=" flex justify-center items-start flex-col gap-2  ">
           <h2 className="font-bold text-2xl">My Expense</h2>
           <Card className="w-100 h-60 ">
             <CardContent>
@@ -304,7 +304,7 @@ function Transactions() {
           </Card>
         </div>
       </div>
-      <div className="w-full h-auto flex justify-center items-center flex-col gap-5 ">
+      <div className="w-full h-auto flex justify-center items-center flex-col gap-5 pb-20 ">
         <div className="flex justify-start items-center w-[85%]">
           <h2 className="font-bold text-2xl">Recent Transactions</h2>
         </div>
