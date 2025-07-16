@@ -432,7 +432,7 @@ function Accounts(props) {
       </div>
       <div className="flex justify-center items-center w-full h-auto gap-10 max-lg:flex-col">
         <div className="flex flex-col justify-center items-center gap-2 w-[60%] max-lg:w-[90%]">
-          <h2 className="font-bold text-2xl">Weekly Activity</h2>
+          <h2 className="font-bold text-2xl">Debit & Credit Overview</h2>
           <div className="flex justify-center items-start w-full h-[350px]">
             <ChartContainer
               config={chartConfig}

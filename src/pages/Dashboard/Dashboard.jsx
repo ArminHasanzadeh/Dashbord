@@ -357,7 +357,7 @@ function Dashboard(props) {
                   <CardTitle
                     className={"flex justify-start items-center gap-1 flex-col"}
                   >
-                    Ahmad
+                    Armin
                     <CardDescription>Designer</CardDescription>
                   </CardTitle>
                 </div>
@@ -368,7 +368,7 @@ function Dashboard(props) {
                   <CardTitle
                     className={"flex justify-start items-center gap-1 flex-col"}
                   >
-                    Amin
+                    Armin
                     <CardDescription>CEO</CardDescription>
                   </CardTitle>
                 </div>

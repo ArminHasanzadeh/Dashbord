@@ -8,6 +8,7 @@ import DashboardLayout from "./layout/dashboardLayout";
 import LoginLayout from "./layout/loginLayout";
 import Transactions from "./pages/Dashboard/Transactions"
 import Accounts from "./pages/Dashboard/Accounts";
+import Investments from "./pages/Dashboard/Investments";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route index path="/dashboard" element={<Dashboard />} />
             <Route index path="/transactions" element={<Transactions />} />
             <Route index path="/accounts" element={<Accounts />} />
+            <Route index path="/investments" element={<Investments />} />
           </Route>
         </Routes>
 
