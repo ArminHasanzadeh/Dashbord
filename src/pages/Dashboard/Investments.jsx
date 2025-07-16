@@ -82,7 +82,7 @@ const invoices = [
 
 function Investments(props) {
   return (
-    <section className="w-[100%] h-full bg-[var(--BgColor)]  overflow-x-hidden  pb-10  ">
+    <section className="w-[100%] h-full bg-[var(--BgColor)]  overflow-x-hidden  pb-10 max-lg:pb-30 ">
       <div className="flex  pt-6 w-full h-auto  justify-center items-center  gap-20 text-[15px] max-lg:flex-col">
         <div className="w-[25%] h-auto flex justify-center items-center bg-white rounded-3xl p-5 max-lg:w-[80%] max-lg:">
           <span className="w-[40%] h-full flex justify-end items-center max-lg:w-[80%] max-lg:justify-center">
