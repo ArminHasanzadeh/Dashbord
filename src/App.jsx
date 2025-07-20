@@ -9,6 +9,12 @@ import LoginLayout from "./layout/loginLayout";
 import Transactions from "./pages/Dashboard/Transactions"
 import Accounts from "./pages/Dashboard/Accounts";
 import Investments from "./pages/Dashboard/Investments";
+import SettingLayout from "./layout/settingLayout";
+import SettingEdit from "./pages/Dashboard/Setting/settingEdit";
+import Preferences from "./pages/Dashboard/Setting/preferences";
+import Security from "./pages/Dashboard/Setting/security";
+
+
 
 function App() {
   return (
@@ -22,9 +28,14 @@ function App() {
 
           <Route element={<DashboardLayout />}>
             <Route index path="/dashboard" element={<Dashboard />} />
-            <Route index path="/transactions" element={<Transactions />} />
-            <Route index path="/accounts" element={<Accounts />} />
-            <Route index path="/investments" element={<Investments />} />
+            <Route  path="/transactions" element={<Transactions />} />
+            <Route  path="/accounts" element={<Accounts />} />
+            <Route  path="/investments" element={<Investments />} />
+              <Route element={<SettingLayout />}>
+                  <Route index path="/settings"  element={<SettingEdit />} />
+                  <Route  path="/settings/preferences"  element={<Preferences />} />
+                  <Route  path="/settings/security"  element={<Security />} />
+              </Route>
           </Route>
         </Routes>
 
