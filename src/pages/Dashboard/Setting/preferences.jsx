@@ -9,18 +9,23 @@ function Preferences(props) {
  const [on3, setOn3] = useState(false);
   const activeBg = "bg-[var(--SwitchColor)]";
   return (
-    <div className="w-[100%] h-[55vh] bg-white rounded-2xl">
+    <div className="w-[100%] h-[55vh] bg-white rounded-2xl max-lg:h-auto max-lg:mb-20">
       <HeaderSetting />
       <div className="flex flex-col ">
-        <div className="w-full h-[40vh] flex justify-center items-start pt-5">
-          <div className="w-[45%] h-auto flex gap-3 flex-col ">
+        <div className="w-full h-[40vh] flex justify-center items-start pt-5 max-lg:flex-col max-lg:h-auto max-lg:items-center">
+          <div className="w-[45%] h-auto flex gap-3 flex-col max-lg:w-[95%] ">
             <div className="w-[80%] h-auto gap-3 flex-col flex justify-center items-start">
               <p>Currency</p>
               <Input type="name" placeholder="USD"  className='h-12'/>
             </div>
-            <div className=" flex-col text-2xl flex justify-center items-start gap-5">
-              <h3 className="text-[var(--TextColor)]">Notification</h3>
-              <div className=" w-full h-auto flex gap-3">
+             <div className="w-[80%] h-auto gap-3  flex justify-center items-start flex-col max-lg:visible">
+              <p>Time Zone</p>
+              <Input type="name" placeholder="(GMT-12:00) International Date Line West" className='h-12' />
+            </div>
+            <div className=" flex-col  flex justify-center items-start gap-5 text-[20px]">
+              <h3 className="text-[var(--TextColor)] text-2xl">Notification</h3>
+              <div className=" w-full h-auto flex gap-3 max-lg:flex-col">
+                
                 <button
                   onClick={() => setOn(!on)}
                   className={`w-20 h-10 rounded-full transition-colors duration-300 ${
@@ -35,7 +40,7 @@ function Preferences(props) {
                 </button>
                 <p>I send or receive digita currency</p>
               </div>
-              <div className=" w-full h-auto flex gap-3">
+              <div className=" w-full h-auto flex gap-3 max-lg:flex-col">
                 <button
                   onClick={() => setOn2(!on2)}
                   className={`w-20 h-10 rounded-full transition-colors duration-300 ${
@@ -50,7 +55,7 @@ function Preferences(props) {
                 </button>
                 <p>I receive merchant order</p>
               </div>
-              <div className=" w-full h-auto flex gap-3">
+              <div className=" w-full h-auto flex gap-3 max-lg:flex-col"> 
                 <button
                   onClick={() => setOn3(!on3)}
                   className={`w-20 h-10 rounded-full transition-colors duration-300 ${
@@ -69,7 +74,7 @@ function Preferences(props) {
            
             </div>
           </div>
-          <div className="w-[45%] h-auto ">
+          <div className="w-[45%] h-auto  max-lg:hidden">
             <div className="w-[80%] h-auto gap-3  flex justify-center items-start flex-col">
               <p>Time Zone</p>
               <Input type="name" placeholder="(GMT-12:00) International Date Line West" className='h-12' />
@@ -77,7 +82,7 @@ function Preferences(props) {
           </div>
         </div>
         <div className="w-[94%] h-[10vh] flex justify-end items-start pr-10 ">
-          <button className="transition-all w-[15%] h-[60%] rounded-2xl bg-[var(--CardColor)] text-[20px] text-white text-center  hover:bg-[var(--HoverColor)]">
+          <button className="transition-all w-[15%] h-[60%] rounded-2xl bg-[var(--CardColor)] text-[20px] text-white text-center  hover:bg-[var(--HoverColor)] max-lg:w-[50%] max-lg:mt-5">
             Save
           </button>
         </div>

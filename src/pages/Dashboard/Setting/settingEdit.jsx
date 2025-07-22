@@ -17,15 +17,15 @@ function SettingEdit(props) {
  
 
   return (
-    <div className="w-[100%] h-[75vh] bg-white rounded-2xl ">
+    <div className="w-[100%] h-[75vh] bg-white rounded-2xl  max-lg:h-auto mb-20 ">
       <HeaderSetting />
-      <div className="flex justify-center gap-20 items-center w-full h-[60vh]">
+      <div className="flex justify-center gap-20 items-center w-full h-[60vh] max-lg:flex-col max-lg:h-auto max-lg:gap-4">
         <div className="w-[15%] h-full flex ">
-          <div className="flex justify-center items-start w-[100%] h-[40%] pt-10 relative  ">
+          <div className="flex justify-center items-start w-[100%] h-[40%] pt-10 relative max-lg:h-auto">
             <Avatar className={"w-40 h-40 "}>
               <AvatarImage src="https://github.com/shadcn.png" />
             </Avatar>
-            <div className="absolute bottom-10 right-10">
+            <div className="absolute bottom-10 right-10 max-lg:bottom-0 max-lg:left-15">
               <span>
                 <svg
                   width="30"
@@ -56,7 +56,7 @@ function SettingEdit(props) {
             </div>
           </div>
         </div>
-        <div className="w-[30%] h-full flex-col flex justify-center items-center gap-10">
+        <div className="w-[30%] h-full flex-col flex justify-center items-center gap-10 max-lg:w-[95%]">
           <div className="w-[90%] h-auto gap-3 flex-col flex justify-center items-start ">
             <p>Your Name</p>
             <Input type="name" placeholder="Name" />
@@ -78,7 +78,7 @@ function SettingEdit(props) {
             <Input type="number" placeholder="45859" />
           </div>
         </div>
-        <div className="w-[30%] h-full flex-col flex justify-center items-center gap-10">
+        <div className="w-[30%] h-full flex-col flex justify-center items-center gap-10 max-lg:w-[95%]">
           <div className="w-[90%] h-auto gap-3 flex-col flex justify-center items-start ">
             <p>User Name</p>
             <Input type="name" placeholder="Name" />
@@ -102,8 +102,8 @@ function SettingEdit(props) {
         </div>
         
       </div>
-          <div className="w-[94%] h-[10vh] flex justify-end items-start pr-10 ">
-            <button className="transition-all w-[15%] h-[60%] rounded-2xl bg-[var(--CardColor)] text-[20px] text-white text-center  hover:bg-[var(--HoverColor)]">Save</button>
+          <div className="w-[94%] h-[10vh] flex justify-end items-start pr-10  ">
+            <button className="transition-all w-[15%] h-[60%] rounded-2xl bg-[var(--CardColor)] text-[20px] text-white text-center  hover:bg-[var(--HoverColor)] max-lg:w-[50%] max-lg:mt-5">Save</button>
           </div>
     </div>
   );

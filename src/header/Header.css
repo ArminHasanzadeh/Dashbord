@@ -1,11 +1,4 @@
-.SpanBar {
-  > span {
-    transition: 0.3s;
-    &:hover {
-      background-color: rgba(151, 151, 151, 0.685);
-    }
-  }
-}
+
 .NavUl {
   > li {
     transition: 0.4s;  

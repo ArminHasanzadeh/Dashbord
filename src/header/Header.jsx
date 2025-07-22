@@ -157,7 +157,9 @@ function Header() {
             </div>
           </div>
           <div className=" w-[20%] gap-5 flex justify-center items-center  SpanBar max-lg:gap-10 max-lg:w-[50%]">
-            <span className="w-11 h-11 flex justify-center items-center rounded-4xl bg-[var(--BgColor)] ">
+           <div  className={`w-11 h-11 flex justify-center items-center rounded-4xl bg-[var(--BgColor)] hover:bg-[var(--NavColor)] transition-all${location.pathname === "/settings/preferences" ? " !bg-[var(--NavColor)] " : ""} ${location.pathname === "/settings" ? "bg-[var(--NavColor)] " : ""} ${location.pathname === "/settings/security" ? "bg-[var(--NavColor)] " : ""}`}>
+            <Link to="/settings">
+            <span>
               <svg
                 width="25"
                 height="25"
@@ -182,8 +184,10 @@ function Header() {
                 </defs>
               </svg>
             </span>
+           </Link>
+           </div>
             
-              <span   className="w-11 h-11 flex justify-center items-center rounded-4xl bg-[var(--BgColor)] max-sm:hidden">
+              <span   className="w-11 h-11 flex justify-center items-center rounded-4xl bg-[var(--BgColor)] max-sm:hidden hover:bg-[var(--NavColor)] transition-all">
               <svg
                 width="25"
                 height="25"
@@ -265,7 +269,7 @@ function Header() {
                 <DrawerHeader>
                   <DrawerTitle className="flex justify-center items-center">
                    <div className="flex justify-center items-start w-full h-50 gap-5 ">
-                <Link>
+                <Link to="/settings">
                 <span className="w-30 h-15 flex justify-center items-center flex-col  rounded-2xl bg-[var(--BgColor)]">
 
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"  className="fill-[var(--NavColor)]">
