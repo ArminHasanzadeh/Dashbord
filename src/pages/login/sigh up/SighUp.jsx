@@ -20,8 +20,24 @@ import {
 } from "../../../../components/ui/tabs";
 
 function SighUp() {
-  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
-  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleRegister = () => {
+    if (!user.name || !user.email || !user.password) {
+      alert("همه فیلدها را پر کنید");
+      return;
+    }
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("ثبت نام با موفقیت انجام شد");
+  };
 
   return (
     <section className="flex justify-center items-center h-[100vh] w-full bg-black">
@@ -37,14 +53,22 @@ function SighUp() {
               <CardHeader>
                 <CardTitle>Account</CardTitle>
                 <CardDescription>
-                  Make changes to your account here.
+                  Create your account information
                 </CardDescription>
               </CardHeader>
 
               <CardContent className="grid gap-6">
                 <div className="grid gap-3">
                   <Label>Name</Label>
-                  <Input />
+                  <Input
+                    value={user.name}
+                    onChange={(e) =>
+                      setUser({
+                        ...user,
+                        name: e.target.value,
+                      })
+                    }
+                  />
                 </div>
 
                 <div className="grid gap-3">
@@ -52,13 +76,16 @@ function SighUp() {
                   <Input
                     type="email"
                     placeholder="m@example.com"
+                    value={user.email}
+                    onChange={(e) =>
+                      setUser({
+                        ...user,
+                        email: e.target.value,
+                      })
+                    }
                   />
                 </div>
               </CardContent>
-
-              <CardFooter>
-                <Button>Save changes</Button>
-              </CardFooter>
             </Card>
           </TabsContent>
 
@@ -67,69 +94,34 @@ function SighUp() {
               <CardHeader>
                 <CardTitle>Password</CardTitle>
                 <CardDescription>
-                  Change your password here.
+                  Create your password
                 </CardDescription>
               </CardHeader>
 
               <CardContent className="grid gap-6">
                 <div className="grid gap-3">
-                  <Label htmlFor="tabs-demo-current">
-                    Current password
-                  </Label>
+                  <Label>Password</Label>
 
                   <div className="relative">
                     <Input
-                      id="tabs-demo-current"
-                      type={
-                        showCurrentPassword
-                          ? "text"
-                          : "password"
+                      type={showPassword ? "text" : "password"}
+                      value={user.password}
+                      onChange={(e) =>
+                        setUser({
+                          ...user,
+                          password: e.target.value,
+                        })
                       }
                     />
 
                     <button
                       type="button"
                       onClick={() =>
-                        setShowCurrentPassword(
-                          !showCurrentPassword
-                        )
+                        setShowPassword(!showPassword)
                       }
                       className="absolute right-3 top-1/2 -translate-y-1/2"
                     >
-                      {showCurrentPassword ? (
-                        <EyeOff size={18} />
-                      ) : (
-                        <Eye size={18} />
-                      )}
-                    </button>
-                  </div>
-                </div>
-
-                <div className="grid gap-3">
-                  <Label htmlFor="tabs-demo-new">
-                    New password
-                  </Label>
-
-                  <div className="relative">
-                    <Input
-                      id="tabs-demo-new"
-                      type={
-                        showNewPassword
-                          ? "text"
-                          : "password"
-                      }
-                    />
-
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setShowNewPassword(
-                          !showNewPassword
-                        )
-                      }
-                      className="absolute right-3 top-1/2 -translate-y-1/2"
-                    >
-                      {showNewPassword ? (
+                      {showPassword ? (
                         <EyeOff size={18} />
                       ) : (
                         <Eye size={18} />
@@ -139,11 +131,15 @@ function SighUp() {
                 </div>
               </CardContent>
 
-              <CardFooter className="flex justify-start items-center gap-10">
-                <Button>Save password</Button>
+              <CardFooter className="flex justify-start items-center gap-5">
+                <Button onClick={handleRegister}>
+                  Register
+                </Button>
 
                 <Link to="/">
-                  <Button>Login</Button>
+                  <Button variant="outline">
+                    Login
+                  </Button>
                 </Link>
               </CardFooter>
             </Card>
