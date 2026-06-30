@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import { Button } from "../../../../components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -18,67 +18,133 @@ import {
   TabsList,
   TabsTrigger,
 } from "../../../../components/ui/tabs";
-function SighUp(props) {
-  
+
+function SighUp() {
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+  const [showNewPassword, setShowNewPassword] = useState(false);
+
   return (
     <section className="flex justify-center items-center h-[100vh] w-full bg-black">
-      <div className="flex w-full max-w-sm flex-col gap-6 ">
+      <div className="flex w-full max-w-sm flex-col gap-6">
         <Tabs defaultValue="account">
           <TabsList>
             <TabsTrigger value="account">Account</TabsTrigger>
             <TabsTrigger value="password">Password</TabsTrigger>
           </TabsList>
+
           <TabsContent value="account">
             <Card>
               <CardHeader>
                 <CardTitle>Account</CardTitle>
                 <CardDescription>
-                  Make changes to your account here. Click save when you&apos;re
-                  done.
+                  Make changes to your account here.
                 </CardDescription>
               </CardHeader>
+
               <CardContent className="grid gap-6">
                 <div className="grid gap-3">
-                  <Label htmlFor="tabs-demo-name">Name</Label>
+                  <Label>Name</Label>
                   <Input />
                 </div>
+
                 <div className="grid gap-3">
-                  <Label htmlFor="email">Email</Label>
+                  <Label>Email</Label>
                   <Input
-                    id="email"
                     type="email"
                     placeholder="m@example.com"
-                    required
                   />
                 </div>
               </CardContent>
+
               <CardFooter>
                 <Button>Save changes</Button>
               </CardFooter>
             </Card>
           </TabsContent>
+
           <TabsContent value="password">
             <Card>
               <CardHeader>
                 <CardTitle>Password</CardTitle>
                 <CardDescription>
-                  Change your password here. After saving, you&apos;ll be logged
-                  out.
+                  Change your password here.
                 </CardDescription>
               </CardHeader>
+
               <CardContent className="grid gap-6">
                 <div className="grid gap-3">
-                  <Label htmlFor="tabs-demo-current">Current password</Label>
-                  <Input id="tabs-demo-current" type="password" />
+                  <Label htmlFor="tabs-demo-current">
+                    Current password
+                  </Label>
+
+                  <div className="relative">
+                    <Input
+                      id="tabs-demo-current"
+                      type={
+                        showCurrentPassword
+                          ? "text"
+                          : "password"
+                      }
+                    />
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setShowCurrentPassword(
+                          !showCurrentPassword
+                        )
+                      }
+                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                    >
+                      {showCurrentPassword ? (
+                        <EyeOff size={18} />
+                      ) : (
+                        <Eye size={18} />
+                      )}
+                    </button>
+                  </div>
                 </div>
+
                 <div className="grid gap-3">
-                  <Label htmlFor="tabs-demo-new">New password</Label>
-                  <Input id="tabs-demo-new" type="password" />
+                  <Label htmlFor="tabs-demo-new">
+                    New password
+                  </Label>
+
+                  <div className="relative">
+                    <Input
+                      id="tabs-demo-new"
+                      type={
+                        showNewPassword
+                          ? "text"
+                          : "password"
+                      }
+                    />
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setShowNewPassword(
+                          !showNewPassword
+                        )
+                      }
+                      className="absolute right-3 top-1/2 -translate-y-1/2"
+                    >
+                      {showNewPassword ? (
+                        <EyeOff size={18} />
+                      ) : (
+                        <Eye size={18} />
+                      )}
+                    </button>
+                  </div>
                 </div>
               </CardContent>
-              <CardFooter className={'flex justify-start items-center  gap-10'}>
+
+              <CardFooter className="flex justify-start items-center gap-10">
                 <Button>Save password</Button>
-                <Link to="/"><Button>Login</Button></Link>
+
+                <Link to="/">
+                  <Button>Login</Button>
+                </Link>
               </CardFooter>
             </Card>
           </TabsContent>
